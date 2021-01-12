@@ -1,0 +1,50 @@
+@import "../../global_styles/_variables";
+
+:global {
+  .ant-modal-body {
+    .page-add-content {
+      margin-bottom: 0;
+    }
+  }
+
+  .page-add-content {
+    margin-bottom: 130px;
+    /* .ant-form-item {
+      max-width: 260px;
+    } */
+  }
+
+  .detail-view.page-add-model-detail-view {
+    margin: 50px 30px;
+    > table {
+      margin: 0;
+    }
+  }
+
+  .page-add-detail-view-action-col {
+    display: inline-block;
+    margin-right: 12px;
+    box-sizing: border-box;
+  }
+
+  .page-add-detail-view-label {
+    line-height: 40px;
+    display: inline-block;
+  }
+  .page-add-action {
+    .ant-btn, .btn, a {
+      margin-right: 8px;
+    }
+    a {
+      font-size: 12px;
+    }
+
+    &.page-add-modal-action {
+      .ant-btn, .btn, a, > * {
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

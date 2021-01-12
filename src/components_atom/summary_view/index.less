@@ -1,0 +1,52 @@
+@import "../../global_styles/_variables";
+
+.normal {
+  border: 1px solid #f4f4f4;
+  border-radius: 3px;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.header {
+  padding: 16px;
+  background: #fafafa;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.scrollBar {
+  display: table;
+  min-width: 1734px;
+  max-width: 1760px;
+
+  :global {
+    td, th {
+      padding: 0;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+  // padding: 12px 0;
+}
+
+:global {
+  .sum-item {
+    .sum-item-desc {
+      padding: 16px;
+      color: #999999;
+      white-space: nowrap;
+      background: #fafafa;
+    }
+    .sum-item-value {
+      padding: 16px;
+      white-space: nowrap;
+      background: #fff;
+    }
+  }
+}

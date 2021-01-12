@@ -1,0 +1,28 @@
+// @import "../../global_styles/_variables";
+
+.detect {
+  position: fixed;
+  top: 56px;
+  right: 0;
+  border: 1px solid #ddd;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  opacity: 0.5;
+  line-height: 1em;
+  font-size: 10px;
+  pointer-events: none;
+  :global {
+    .domain {
+      border-bottom: 1px solid #ddd;
+      max-width: 80em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}

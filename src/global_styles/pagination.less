@@ -1,0 +1,38 @@
+@import "../global_styles/_variables";
+
+:global {
+  // 开发模式，能点击到最后
+  body.prod {
+    .ant-table-pagination-hide-last {
+      .ant-pagination-jump-next ~ .ant-pagination-item {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 600PX) {
+    .ant-pagination {
+      .ant-pagination-prev, .ant-pagination-next, .ant-pagination-item, .ant-pagination-options-quick-jumper {
+        min-width: 2PX;
+        height: 20PX;
+        line-height: 2PX;
+        margin-right: 0;
+        input {
+          width: 3PX;
+          height: 20PX;
+          margin: 0;
+          line-height: 1em;
+        }
+      }
+      .ant-pagination-options {
+        margin-left: 2PX;
+      }
+      .ant-pagination-prev, .ant-pagination-next {
+        a:after {
+          height: 20PX;
+          line-height: 2PX;
+        }
+      }
+    }
+  }
+}

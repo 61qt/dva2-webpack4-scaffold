@@ -1,0 +1,90 @@
+@import "../global_styles/_variables";
+
+:global {
+  div.ant-modal {
+    .ant-modal-header {
+      background-color: #F2F2F2;
+      color: #000000;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &.ant-modal-confirm {
+      .ant-modal-body {
+        padding: 30px 30px 24px;
+        >div[class*=body-wrapper] {
+          >div[class*=body] {
+            >div[class*=content]	 {
+              margin-top: 10px;
+
+              .ant-table-wrapper {
+                margin-top: 30px;
+                margin-left: -38px;
+              }
+            }
+          }
+          >div[class*=btns]	 {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+
+    &:not(.ant-modal-confirm) {
+      .ant-modal-footer {
+        padding-top: 6px;
+      }
+    }
+    .ant-modal-footer {
+      padding-top: 30px;
+      padding-bottom: 24px;
+      padding-right: 30px;
+    }
+
+    .ant-table>.ant-table-content>.ant-table-body {
+      margin: 0;
+    }
+  }
+
+  .noCancelBtnModal.noSureBtnModal {
+    .ant-modal-footer {
+      display: none;
+    }
+  }
+
+  .noBtnBorderModal {
+    .ant-modal-footer {
+      border: 0;
+    }
+  }
+
+  .noCancelBtnModal {
+    .ant-modal-footer {
+      .ant-btn:first-child {
+        display: none;
+      }
+    }
+    .ant-modal-close {
+      display: none;
+    }
+  }
+
+  .showAntModalClose {
+    button.ant-modal-close {
+      display: block;
+    }
+  }
+
+  .noSureBtnModal {
+    .ant-modal-footer {
+      .ant-btn:last-child {
+        display: none;
+      }
+    }
+    .ant-confirm-btns {
+      display: none;
+    }
+    // .ant-modal-close {
+    //   display: none;
+    // }
+  }
+}

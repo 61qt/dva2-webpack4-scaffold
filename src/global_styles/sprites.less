@@ -1,0 +1,115 @@
+@import "../global_styles/_variables";
+
+// @import '../.sprites/sprites.less';
+@import "@{spriteLessPath}";
+
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+// .sprite-image(@sprite) {
+//   @sprite-image: extract(@sprite, 9);
+//   @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+//   background-image: url(@sprite-image-bare);
+// }
+
+// .spriteElem(@sprite) {
+//   // .sprite-image(@sprite);
+//   .sprite-position(@sprite);
+//   .sprite-width(@sprite);
+//   .sprite-height(@sprite);
+// }
+
+.spriteElem(@sprite) {
+
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  @sprite-width: extract(@sprite, 5);
+  @sprite-height: extract(@sprite, 6);
+  @sprite-total-width: extract(@sprite, 7);
+  @sprite-total-height: extract(@sprite, 8);
+  @sprite-image: extract(@sprite, 9);
+
+  @sprite-rw: @sprite-total-width / @sprite-width;
+  @sprite-rh: @sprite-total-height / @sprite-height;
+  @sprite-rx: @sprite-offset-x / (@sprite-total-width - @sprite-width);
+  @sprite-ry: @sprite-offset-y / (@sprite-total-height - @sprite-height);
+
+  @if @sprite-rw == NaN or @sprite-rw == Infinity {
+    @sprite-rx: 0;
+  }
+
+  @if @sprite-rh == NaN or @sprite-rh == Infinity {
+    @sprite-rx: 0;
+  }
+
+  @if @sprite-rx == NaN or @sprite-rx == Infinity {
+    @sprite-rx: strip-unit(@sprite-offset-x);
+  }
+
+  @if @sprite-ry == NaN or @sprite-ry == Infinity {
+    @sprite-ry: strip-unit(@sprite-offset-y);
+  }
+
+  @sprite-rx-abs: abs(@sprite-rx);
+  @sprite-ry-abs: abs(@sprite-ry);
+  // sprite-rx: @sprite-rx;
+  // sprite-ry: @sprite-ry;
+  // sprite-rx-abs: @sprite-rx-abs;
+  // sprite-ry-abs: @sprite-ry-abs;
+
+  width: @sprite-width;
+  height: @sprite-height;
+
+  background-repeat: no-repeat;
+  background-size: percentage(@sprite-rw) percentage(@sprite-rh);
+  background-position: percentage(@sprite-rx-abs) percentage(@sprite-ry-abs);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+
+.spritesElem(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .sp.sp-@{sprite-name} {
+    .spriteElem(@sprite);
+  }
+  .spritesElem(@sprites, @i + 1);
+}
+
+:global {
+  .sp {
+    // // rem下雪碧图1px误差问题，但是依然会有开关图标对不齐问题
+    // padding: 1px;
+    // // 从内容区开始绘制背景
+    // background-origin: content-box;
+    // // 在内边距盒外裁切背景
+    // background-clip: padding-box;
+    display: inline-block;
+    background-image: url(@spriteImgPath);
+    // background-image: url('../.sprites/sprites.png');
+  }
+  .spritesElem(@spritesheet-sprites);
+}

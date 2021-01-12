@@ -1,0 +1,318 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "no-unused-expressions": [0],
+    "generator-star-spacing": [0],
+    "consistent-return": [0],
+    "react/forbid-prop-types": [0],
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "global-require": [0],
+    "import/prefer-default-export": [1],
+    "react/jsx-no-bind": [0],
+    "react/prop-types": [0],
+    "class-methods-use-this": [0],
+    "react/prefer-stateless-function": [0],
+    "no-else-return": [0],
+    "react/jsx-closing-bracket-location": [1, "after-props"],
+    "prefer-promise-reject-errors": [0],
+    "jsx-a11y/click-events-have-key-events": [0],
+    "no-restricted-syntax": [0],
+    "no-multi-assign": [0],
+    "import/no-extraneous-dependencies": [0],
+    "jsx-a11y/no-noninteractive-element-interactions": [0],
+    "no-use-before-define": [1],
+    "jsx-a11y/no-static-element-interactions": [0],
+    "no-nested-ternary": [0],
+    "no-mixed-operators": [0],
+    "react/no-array-index-key": [0],
+    "arrow-body-style": [0],
+    "import/extensions": [0],
+    "import/no-webpack-loader-syntax": [0],
+    "no-bitwise": [0],
+    "no-cond-assign": [0],
+    "import/no-unresolved": [0],
+    "require-yield": [1],
+    "object-curly-newline": [0],
+    "react/jsx-no-target-blank": [0],
+    "prefer-destructuring": [0],
+    "no-restricted-globals": [0],
+    "jsx-a11y/anchor-is-valid": [0],
+    "react/jsx-closing-tag-location": [0],
+    "import/no-named-as-default-member": [1],
+    "no-template-curly-in-string": [0],
+    "yoda": [1, "always"],
+    "react/no-multi-comp": [0],
+    "brace-style": [2, "stroustrup"],
+    "max-len": 0
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "legacyDecorators": true,
+      "jsx": true
+    }
+  },
+  "globals": {
+    "_": true,
+    "React": true,
+    "window": true,
+    "__DEV__": true,
+    "__PROD__": true,
+    "QINIU_IMG_CDN_URL": true,
+    "APP_CONSTANT": true,
+    "Blob": true,
+    "XMLHttpRequest": true,
+    "FormData": true,
+    "FileReader": true,
+    "location": false,
+    "parseInt": true,
+    "debugAdd": true,
+    "require": true,
+    "localStorage": true,
+    "sessionStorage": true,
+    "document": true,
+    "navigator": true,
+    "wx": true,
+    "dd": true,
+    "prompt": true,
+    "_czc": true,
+    "_hmt": true,
+
+    "DEFINE_EJS_SOURCE_PREFIX": true,
+
+    "DEFINE_STATISTICS_MODULES": true,
+
+    "DEFINE_SHOULD_SAVE_STATE": true,
+
+    "DEFINE_SEARCH_FORM_SHOW_EXPAND": true,
+    "DEFINE_SEARCH_FORM_DEFAULT_EXPAND": true,
+
+    "DEFINE_LIBRARY_APP_NAME": true,
+
+    "DEFINE_SENTRY_BASE_DOMAIN": true,
+    "DEFINE_SENTRY_PROJECT_TOKEN": true,
+    "DEFINE_SENTRY_PEOJECT_ID": true,
+    "DEFINE_BAIDU_TONGJI_KEY": true,
+    "DEFINE_RELEASE_VERSION": true,
+    "DEFINE_RELEASE_DATE": true,
+    "DEFINE_RELEASE_ENV": true,
+    "DEFINE_HOTJAR_KEY": true,
+
+    "DEFINE_UMENG_ID": true,
+    "DEFINE_UMENG_WEB_ID": true,
+
+    "DEFINE_MODULE": true,
+    "DEFINE_UPLOAD_PATH": true,
+    "DEFINE_UPLOAD_PREFIX": true,
+
+    "DEFINE_PROJ_NEED_SUPERDOG": true,
+    "DEFINE_API_NEED_SUPERDOG_DIGEST": true,
+
+    "DEFINE_COUNTRY_NAME": true,
+    "DEFINE_COUNTRY_CODE": true,
+    "DEFINE_COUNTRY_ID": true,
+
+    "DEFINE_CAN_CHANGE_CITY": true,
+
+    "__DEFINE_PROD__": true,
+    "__DEFINE_DEV__": true,
+
+    "DEFINE_LOGOUT_METHOD_POST_WITH_TOKEN_AUTH": true,
+
+    "DEFINE_DETECT_DOMAIN": true,
+    "DEFINE_WEBSITE_MODULES": true,
+    "DEFINE_OPERATIONS_PLATFORM_MODULES": true,
+
+    "DEFINE_WEB_PREFIX": true,
+    "DEFINE_FULL_OPENAPI_DOMAIN_WITH_HTTP_PREFIX": true,
+    "DEFINE_FULL_OPENAPI_DOMAIN_WITH_HTTPS_PREFIX": true,
+    "DEFINE_FULL_API_DOMAIN_WITH_HTTP_PREFIX": true,
+    "DEFINE_FULL_API_DOMAIN_WITH_HTTPS_PREFIX": true,
+    "DEFINE_FULL_UNION_DOMAIN_WITH_HTTP_PREFIX": true,
+    "DEFINE_FULL_UNION_DOMAIN_WITH_HTTPS_PREFIX": true,
+    "DEFINE_HAS_HTTPS_SERVER": true,
+    "DEFINE_GRAPHQL_PATH": true,
+    "DEFINE_API_MODULE": true,
+    "DEFINE_DICT_PATH": true,
+    "DEFINE_EDITABLE_DICT_PATH": true,
+    "DEFINE_FAVICON_ICO": true,
+
+    "DEFINE_KDE_ENROLL_DISTRICT_ID": true,
+    "DEFINE_KDE_REG_FILL_STUDENT_PARENT_OPTIONAL": true,
+    "DEFINE_SHOW_KDE_PRE_AUDIT_TIME": true,
+
+    "DEFINE_CAS_AUTO_JUMP_ADMIN_LOGIN_IF_IS_ADMIN_CACHE": true,
+    "DEFINE_ROOT_DOMAIN": true,
+
+    "CONST_DICT": true,
+    "DEFINE_CONST_TIME_FORMAT": true,
+    "CONST_TIME": true,
+    "CONST_CURRENT_YEAR": true,
+    "EDITABLE_DICT": true,
+    // BOOK_CATEGORY_TREE，这个目前是异步加载的，不能直接使用
+    // "BOOK_CATEGORY_TREE": true,
+    "AREAS": true,
+
+    "DEFINE_PROJ": true,
+
+    "DEFINE_MINI_APP_ID_PARENT": true,
+    "DEFINE_MINI_APP_ID_HSE": true,
+
+    "DEFINE_IS_MOBILE": true,
+
+    "DEFINE_KDE_ENTER_AGE_RANGE": true,
+    "DEFINE_STATIC_LOGO_LOGO": true,
+    "DEFINE_STATIC_LOGO_LOGO_WHITE": true,
+    "DEFINE_STATIC_LOGO_TEXT": true,
+    "DEFINE_STATIC_LOGO_TEXT_WHITE": true,
+    "DEFINE_STATIC_SPRITES_SVG_FILE": true,
+    "DEFINE_STATIC_SPRITES_SVG_FOLDER": true,
+    "DEFINE_STATIC_SPRITES_SVG_FOLDER_OPENED": true,
+    "DEFINE_STATIC_SPRITES_SVG_OFFICE": true,
+    "DEFINE_STATIC_SPRITES_SVG_CENTER_SCHOOL": true,
+    "DEFINE_STATIC_SPRITES_SVG_SCHOOL": true,
+    "DEFINE_STATIC_SPRITES_SVG_DEPARTMENT": true,
+    "DEFINE_CAS_USER_NEED_CHANGE_LIBRARY_LOGO_TEXT": true,
+
+    "DEFINE_IS_SHOW_SOCIALITES_WECHAT": true,
+    "DEFINE_IS_SHOW_SOCIALITES_QQ": true,
+    "DEFINE_IS_SHOW_SOCIALITES_DINGDING": true,
+    "DEFINE_LOGIN_QQ_GROUP": true,
+
+    "DEFINE_PAGE_TITLE_TEXT": true,
+
+    "DEFINE_SHOW_PM_DASHBOARD": true,
+    "DEFINE_SHOW_SNOM_DASHBOARD": true,
+    "DEFINE_SHOW_HSE_DASHBOARD": true,
+    "DEFINE_SHOW_MSE_DASHBOARD": true,
+    "DEFINE_SHOW_PSE_DASHBOARD": true,
+    "DEFINE_SHOW_KDE_DASHBOARD": true,
+    "DEFINE_SHOW_DUTY_DASHBOARD": true,
+    "DEFINE_SHOW_ASSET_DASHBOARD": true,
+    "DEFINE_SHOW_LIBRARY_DASHBOARD": true,
+    "DEFINE_SHOW_HEALTH_DASHBOARD": true,
+    "DEFINE_SHOW_COLUMN_DASHBOARD": true,
+
+    "DEFINE_HEALTH_SCHOOL_PHYSICAL_SUMMARY_TEXT": true,
+    "DEFINE_HEALTH_STUDENT_HEALTH_TEXT": true,
+
+    "DEFINE_SHOW_PM_GROW": true,
+    "DEFINE_ACCOUNT_CODE": true,
+
+    "DEFINE_USE_ALIYUN_OSS": true,
+    "DEFINE_ALIYUN_OSS_BUCKET": true,
+    "DEFINE_ALIYUN_OSS_REGION": true,
+    "OSS": true,
+
+    "DEFINE_SHOW_HOST_INFO": true,
+
+    "DEFINE_BI_GRAPHQL_PATH": true,
+
+    "DEFINE_SIDER_WIDTH": true,
+
+    "DEFINE_SNOM_HAS_AUDIT_OPEN_BTN": true,
+
+    "DEFINE_PM_HAS_AUDIT_OPEN_BTN": true,
+
+    "DEFINE_DEBUG_NEED_DOG": true,
+
+    "DEFINE_SHOW_PM_TEACHER_TRANSFEROUT_BTN": true,
+
+    "DEFINE_TABLE_STUDENT_HAS_SHCOOL_ID_NUMBER": true,
+    "DEFINE_TABLE_STUDENT_TRANSCRIPT_HAS_DISTRICT_ID": true,
+
+    "DEFINE_TABLE_HAS_DOWNLOAD_TASK": true,
+
+    "DEFINE_TABLE_TEACHER_HAS_SHCOOL_ID_NUMBER": true,
+
+    "DEFINE_TABLE_HAS_STUDENT_TRANSCRIPT_DISPLAY_SETTING": true,
+
+    "DEFINE_HSE_WISH_ENROLL_STUDENT_EXPORT_RESTFUL": true,
+    "DEFINE_HSE_WISH_ENROLL_STUDENT_EXPORT_GRAPHQL": true,
+
+    "DEFINE_TABLE_USER_HAS_ID_TYPE": true,
+
+    "DEFINE_APP_SHOW_DINGTALK_SETTING": true,
+    "DEFINE_APP_TEACHER_ADD_BELONG_DEPARTMENT": true,
+    "DEFINE_APP_SHOW_GRADE_ADD_LECTURE": true,
+    "DEFINE_APP_SHOW_GRADE_ADD_CLASS_LEADER": true,
+    "DEFINE_APP_CHANGE_GRADE_NAME": true,
+    "DEFINE_APP_SHOW_SPECIFY_DEPARTMENT_ADD_MANAGER": true,
+    "DEFINE_APP_SHOW_TEACHER_ADD_COURSES": true,
+    "DEFINE_APP_USER_MANAGE_TITLE": true,
+
+    "DEFINE_HSE_SHOW_ALL_WISH_FILLING_TIME": true,
+    "DEFINE_HSE_HAS_ENROLL_TIME": true,
+    "DEFINE_HSE_SECOND_AND_THIRD_SEQUENCE_WISH_COUNT": true,
+    "DEFINE_HSE_NATION_ENROLL_ALIAS": true,
+    "DEFINE_HSE_FISRT_SEQUENCE_WISH_COUNT": true,
+    "DEFINE_HSE_SINGLE_ENROLL_ALIAS": true,
+    "DEFINE_HSE_CAN_CHANGE_STUDENT_WISH_ENROLL": true,
+
+    "DEFINE_ANALYSIS_ADD_DISTRICT_VIEW": true,
+
+    "DEFINE_LOGO_COLOR": true,
+    "DEFINE_JSON_BOOK_CATEGORY_FILE": true,
+    "DEFINE_BOOK_CATEGORIES_PATH_PREFIX": true,
+    "DEFINE_BOOK_CATEGORY_TREE_PATH": true,
+
+    "DEFINE_GLOBAL_SHOW_ERUDA": true,
+
+    "DEFINE_ADD_EDU_SYSTEM_TWELVE_YEARS_KDE": true,
+
+    "DEFINE_LABEL_POLITICAL": true,
+    "DEFINE_IS_CHANGED_LABEL_POLITICAL": true,
+
+    "DEFINE_HSE_HAS_MIDDLE_TWO_STUDENT_ENROLL": true,
+
+    "DEFINE_HIDE_GRADE_YEAR": true,
+    "DEFINE_SNOM_SHOW_TEACH_VOCATION_OPTION": true,
+
+    "DEFINE_USER_ROLE_OPTIMIZE_MODULES": true,
+    "DEFINE_SERVICE_SCHEME_OPTIMIZE_MODULES": true,
+    "DEFINE_SERVICE_SCHEME_BFS_MODULES": true,
+    "DEFINE_SERVICE_SCHEMA_LIST_TYPE_WHITELIST_OPTIMIZE_MODULES": true,
+
+    "DEFINE_GRADE_ADD_CAN_EDIT_YEAR_STAGE_SCHOOL": true,
+    "DEFINE_GRADE_ADD_AUTO_COUNT_GRADE_BY_CONFIGED_TIME": true,
+    "DEFINE_GRADE_ADD_YEAR_SHOW_CONFIGED_MOUTH": true,
+
+    "DEFINE_ELECTIVE_COURSE_ADD_HAS_DEFAULT_COVER": true,
+    "DEFINE_ELECTIVE_DEFAULT_COVER": true,
+    "DEFINE_ELECTIVE_COURSE_ADD_HAS_AUTHOR": true,
+    "DEFINE_ELECTIVE_AGE_FROM_AGE_TO_FIELD_TRANSFER_COURSE_GRADE": true,
+    "DEFINE_ELECTIVE_HAS_TABS_FOR_COMMENT_PONINT": true,
+    "DEFINE_ELECTIVE_STUDNET_ENROLLMENT_CAN_PATCH_ENROLLMENT": true,
+    "DEFINE_APP_HEAD_TEXT_NAME": true,
+    "DEFINE_APP_MENU_MANAGER_TITLE": true,
+    "DEFINE_HAS_SUPPORT_DOCUMENT_MANAGEMENT": true,
+    "DEFINE_UPLOAD_TEST_URL": true,
+    "DEFINE_HAS_SUPPORT_DOCUMENT_MODULES": true,
+    "DEFINE_SNOM_M_DASHBOARD_STATISTICS_ADD_FIELDS": true,
+    "DEFINE_PM_M_DASHBOARD_STATISTICS_ADD_FIELDS": true,
+    "DEFINE_CONFIG_PROJ": true,
+    "DEFINE_BI_SYSTEM": true,
+    "DEFINE_PROJECT_NAME": true,
+    "DEFINE_VALIDATOR_MUTATION_MODULES": true,
+
+    "DEFINE_HIDE_BORROW_BOOK_TIME": true,
+    "DEFINE_SHOW_BOOK_ISBN_LIST": true,
+
+    "DEFINE_LIBRARY_INDEX_PATH": true,
+    "DEFINE_SHOW_LIBRARY_HOME_MENU": true,
+
+    "DEFINE_IS_SHOW_LOGIN_TIPS": true,
+    "DEFINE_IS_SHOW_SOCIALITES": true,
+    "DEFINE_UNION_DOMAIN": true,
+    "DEFINE_BOOK_BORROW_LOG_EXPORTABLE_LIST": true,
+    "DEFINE_BOOK_BORROW_LOG_EXPORT_ACTION": true,
+
+    "DEFINE_USER_ROLE_ID_OF_LIBRARY_MANAGER": true,
+    "DEFINE_HSE_ENROLL_HIDE_ADJUST_BY_HAND_STEP": true,
+    "DEFINE_CAN_CHANGE_PROVINCE": true,
+    "DEFINE_USER_ROLE_OPTIMIZE_CONFIG": true
+  }
+}

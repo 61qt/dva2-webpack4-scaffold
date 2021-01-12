@@ -1,0 +1,36 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+node_modules
+
+# production
+/dist
+
+# misc
+.DS_Store
+npm-debug.log*
+
+nginx/*.conf
+nginx/*.conf.part
+
+yarn-error.log
+
+prod_*/
+.prod_*/
+
+.proj_env
+
+src/.sprites/**
+
+/config.js
+
+.prod/*
+.prod_v2/*
+prod/*
+
+nginx/edu*.log
+nginx/www*.log
+nginx/**.log
+
+src/npm/.yarn-integrity

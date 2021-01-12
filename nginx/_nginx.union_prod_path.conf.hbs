@@ -1,0 +1,21 @@
+  location = / {
+    rewrite ^(.*)$ $scheme://$http_host/example/ break;
+  }
+
+  location ^~ /static/ {
+    alias {{devRoot}}/src/static/;
+  }
+
+  {{#each modules}}
+    location = /{{moduleWebPrefix}} {
+      rewrite ^(.*)$ $scheme://$http_host/{{moduleWebPrefix}}/ break;
+    }
+
+    location ^~ /{{moduleWebPrefix}}/ {
+      alias {{devRoot}}/prod/{{moduleName}}/;
+      index index.html;
+      try_files $uri $uri/ $uri.html /index.html =404;
+      add_header Last-Modified $date_gmt;
+    }
+
+  {{/each}}

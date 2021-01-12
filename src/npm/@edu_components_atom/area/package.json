@@ -1,0 +1,13 @@
+{
+  "name": "@edu_components_atom/area",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "qtpublish": "npm publish --registry http://npm.example.cn",
+    "qtunpublish": "npm unpublish --registry http://npm.example.cn"
+  },
+  "author": "",
+  "license": "ISC"
+}

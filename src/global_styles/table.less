@@ -1,0 +1,552 @@
+@import "../global_styles/_variables";
+
+:global {
+  table {
+    background-color: transparent;
+  }
+  table {
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+  .table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .table-bordered {
+    border: 1PX solid #eceeef;
+  }
+  .table {
+    table-layout: fixed;
+    margin-bottom: 1.0625rem;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  table, .table {
+    td, th {
+      // padding: 16PX 8PX 16PX 8PX;
+      text-align: left;
+    }
+  }
+
+
+
+  .table.table-striped.table-bordered > tbody > tr:nth-of-type(odd) {
+    background-color: transparent;
+  }
+  .table.table-striped.table-bordered > tbody > tr:nth-of-type(even) {
+    background-color: rgba(244, 246, 249, 0.3);
+  }
+
+  .table.table-bordered {
+   > thead, > tbody, > tfoot {
+    > tr {
+      td, th {
+        border: 1PX solid #e9e9e9;
+      }
+    }
+   }
+  }
+
+  @media (max-width: 600PX) {
+    .ant-table-fixed-right, .ant-table-fixed-left {
+      display: none!important;
+    }
+  }
+
+  .sticky-table .ant-table-fixed-left .ant-table-body-inner {
+    margin-right: 0;
+  }
+
+  // 放宽滚动。
+  // @media (max-height: 600PX) {
+  //   .ant-table-scroll .ant-table-body,
+  //   .ant-table-fixed-left .ant-table-body-inner,
+  //   .ant-table-fixed-right .ant-table-body-inner {
+  //     max-height: none!important;
+  //     overflow: auto!important;
+  //     overflow-x: auto!important;
+  //     overflow-y: auto!important;
+  //   }
+  // }
+}
+
+:global {
+  .ant-table-wrapper {
+  }
+
+  div.ant-table {
+    &-body {
+    }
+
+    &-empty &-body {
+    }
+
+    table {
+    }
+
+    &-layout-fixed table {
+    }
+
+    &-thead > tr > th {
+      &[colspan]:not([colspan='1']) {
+      }
+
+      .anticon-filter,
+      .ant-table-filter-icon {
+        > svg {
+        }
+      }
+
+      .ant-table-filter-selected.anticon-filter {
+      }
+
+      .ant-table-column-sorter {
+        .ant-table-column-sorter-inner {
+          .ant-table-column-sorter-up,
+          .ant-table-column-sorter-down {
+            &.on {
+            }
+          }
+
+          &-full {
+            .ant-table-column-sorter-up,
+            .ant-table-column-sorter-down {
+            }
+
+            .ant-table-column-sorter-down {
+            }
+          }
+        }
+      }
+
+      &.ant-table-column-has-actions {
+        &.ant-table-column-has-filters {
+          .anticon-filter,
+          .ant-table-filter-icon {
+            &.ant-table-filter-open {
+            }
+          }
+          // Very complicated styles logic but necessary
+          &:hover {
+            .anticon-filter,
+            .ant-table-filter-icon {
+              &:hover {
+              }
+              &:active {
+              }
+            }
+          }
+        }
+
+        &.ant-table-column-has-sorters {
+          &:hover {
+            .anticon-filter,
+            .ant-table-filter-icon {
+
+            }
+          }
+          &:active {
+            .ant-table-column-sorter-up:not(.on),
+            .ant-table-column-sorter-down:not(.on) {
+            }
+          }
+        }
+      }
+
+      .ant-table-header-column {
+        .ant-table-column-sorters {
+          > .ant-table-column-title {
+          }
+
+          > *:not(.ant-table-column-sorter) {
+          }
+          &::before {
+          }
+          &:hover::before {
+          }
+        }
+      }
+
+      &.ant-table-column-has-sorters {
+      }
+    }
+
+    &-thead > tr:first-child > th {
+      &:first-child {
+      }
+
+      &:last-child {
+      }
+    }
+
+    &-thead > tr:not(:last-child) > th {
+      &[colspan] {
+      }
+    }
+
+    &-tbody > tr > td {
+    }
+
+    &-thead > tr,
+    &-tbody > tr {
+      &.ant-table-row-hover,
+      &:hover {
+        &:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+        }
+      }
+      &.ant-table-row-selected > td {
+        &.ant-table-column-sort {
+        }
+      }
+      &:hover {
+        &.ant-table-row-selected > td {
+          &.ant-table-column-sort {
+          }
+        }
+      }
+    }
+
+    &-thead > tr:hover {
+    }
+
+    &-footer {
+      padding-left: 10PX;
+      &::before {
+      }
+    }
+
+    &.ant-table-bordered &-footer {
+    }
+
+    &-title {
+      padding: 8PX 16PX;
+      padding-left: 16PX;
+    }
+
+    &.ant-table-bordered &-title {
+    }
+
+    &-title + &-content {
+
+      .ant-table-bordered & {
+        &,
+        table,
+        .ant-table-thead > tr:first-child > th {
+        }
+      }
+    }
+
+    &-without-column-header &-title + &-content,
+    &-without-column-header table {
+    }
+
+    &-without-column-header&-bordered&-empty &-placeholder {
+    }
+
+    &-tbody > tr.ant-table-row-selected td {
+    }
+
+    &-thead > tr > th.ant-table-column-sort {
+    }
+
+    &-tbody > tr > td.ant-table-column-sort {
+    }
+
+    &-thead > tr > th,
+    &-tbody > tr > td {
+    }
+
+    &-expand-icon-th,
+    &-row-expand-icon-cell {
+    }
+
+    &-header {
+      background: #fafafa!important;
+    }
+
+    &-header table {
+    }
+
+    &-loading {
+      .ant-table-body {
+      }
+      .ant-table-spin-holder {
+      }
+      .ant-table-with-pagination {
+      }
+      .ant-table-without-pagination {
+      }
+    }
+
+    &-bordered {
+      .ant-table-header > table,
+      .ant-table-body > table,
+      .ant-table-fixed-left table,
+      .ant-table-fixed-right table {
+      }
+
+      &.ant-table-empty {
+        .ant-table-placeholder {
+        }
+      }
+
+      &.ant-table-fixed-header {
+        .ant-table-header > table {
+        }
+
+        .ant-table-body > table {
+        }
+
+        .ant-table-header + .ant-table-body > table,
+        .ant-table-body-inner > table {
+        }
+      }
+
+      .ant-table-thead > tr:not(:last-child) > th {
+      }
+
+      .ant-table-thead > tr > th,
+      .ant-table-tbody > tr > td {
+      }
+    }
+
+    &-placeholder {
+    }
+
+    &-pagination.ant-table-pagination {
+    }
+
+    &-filter-dropdown {
+
+      .ant-table-dropdown-menu {
+
+        &-without-submenu {
+          overflow-x: hidden;
+        }
+
+        &-item > label + span {
+        }
+
+        &-sub {
+        }
+
+        .ant-table-dropdown-submenu-contain-selected {
+          .ant-table-dropdown-menu-submenu-title::after {
+          }
+        }
+      }
+
+      .ant-table-dropdown-menu-item {
+      }
+
+      > .ant-table-dropdown-menu > .ant-table-dropdown-menu-item:last-child,
+      > .ant-table-dropdown-menu
+        > .ant-table-dropdown-menu-submenu:last-child
+        .ant-table-dropdown-menu-submenu-title {
+      }
+
+      &-btns {
+      }
+
+      &-link {
+        &:hover {
+        }
+        &:active {
+        }
+        &.confirm {
+        }
+        &.clear {
+        }
+      }
+    }
+
+    &-selection {
+
+      &-select-all-custom {
+      }
+
+      .anticon-down {
+      }
+
+      &-menu {
+
+        .ant-table-action-down {
+        }
+      }
+
+      &-down {
+        &:hover .anticon-down {
+        }
+      }
+    }
+
+    &-row {
+      &-expand-icon {
+        &:focus,
+        &:hover,
+        &:active {
+        }
+      }
+
+      &-expanded::after {
+      }
+
+      &-collapsed::after {
+      }
+
+      &-spaced {
+        &::after {
+        }
+      }
+
+      &-cell-ellipsis,
+      &-cell-ellipsis .ant-table-column-title {
+      }
+
+      &-cell-ellipsis .ant-table-column-title {
+      }
+
+      &-cell-break-word {
+        word-break: break-word;
+      }
+    }
+
+    tr&-expanded-row {
+      &,
+      &:hover {
+      }
+
+      td > .ant-table-wrapper {
+      }
+    }
+
+    .ant-table-row-indent + .ant-table-row-expand-icon {
+    }
+
+    &-scroll {
+      overflow-x: hidden;
+      table {
+
+        .ant-table-fixed-columns-in-body:not([colspan]) {
+          & > * {
+          }
+        }
+      }
+    }
+
+    &-body-inner {
+    }
+
+    &-fixed-header > &-content > &-scroll > &-body {
+    }
+
+    &-fixed-header &-body-inner {
+      // overflow: auto!important;
+    }
+
+    &-fixed-header &-scroll &-header {
+      margin-bottom: -20px;
+      padding-bottom: 20px;
+      // Workaround for additional scroll bar on the table header
+
+      &::-webkit-scrollbar {
+      }
+    }
+
+    &-hide-scrollbar {
+      // https://stackoverflow.com/a/54101063
+
+      &::-webkit-scrollbar {
+        // set min width to window chrome scrollbar
+      }
+    }
+
+    // optimize header style of borderd table after hide extra scrollbar
+    &-bordered&-fixed-header &-scroll &-header {
+      &::-webkit-scrollbar {
+      }
+      &.ant-table-hide-scrollbar
+        .ant-table-thead
+        > tr:only-child
+        > th:last-child {
+      }
+    }
+
+    &-fixed-left,
+    &-fixed-right {
+      table {
+      }
+    }
+
+    &-fixed-header &-fixed-left &-body-outer &-fixed,
+    &-fixed-header &-fixed-right &-body-outer &-fixed {
+    }
+
+    &-fixed-left {
+      box-shadow: 6PX 0 6PX -4PX rgba(0,0,0,.15);
+      // border-right: 1PX solid #f4f4f4;
+
+      .ant-table-header {
+        overflow-y: hidden;
+      }
+      // hide scrollbar in left fixed columns
+      .ant-table-body-inner {
+      }
+      .ant-table-fixed-header & .ant-table-body-inner {
+      }
+      &,
+      table {
+      }
+      .ant-table-thead > tr > th:last-child {
+      }
+    }
+
+    &-fixed-right {
+      &,
+      table {
+      }
+      // hide expand row content in right-fixed Table
+      .ant-table-expanded-row {
+        pointer-events: none;
+      }
+      .ant-table-thead > tr > th:first-child {
+      }
+    }
+
+    &&-scroll-position-left &-fixed-left {
+    }
+
+    &&-scroll-position-right &-fixed-right {
+    }
+
+    // ========================== Row Selection ==========================
+    colgroup {
+      > col.ant-table-selection-col {
+      }
+    }
+
+    &-thead > tr > th.ant-table-selection-column-custom {
+      .ant-table-selection {
+      }
+    }
+
+    &-thead > tr > th.ant-table-selection-column,
+    &-tbody > tr > td.ant-table-selection-column {
+
+      .ant-table-radio-wrapper {
+      }
+    }
+
+    &-row[class*='ant-table-row-level-0'] .ant-table-selection-column > span {
+    }
+  }
+
+  .ant-table-filter-dropdown,
+  .ant-table-filter-dropdown-submenu {
+    .ant-table-checkbox-wrapper + span {
+    }
+  }
+
+}

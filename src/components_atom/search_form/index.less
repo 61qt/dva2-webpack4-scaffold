@@ -1,0 +1,31 @@
+@import "../../global_styles/_variables";
+
+.formHeaderColumns {
+  border-bottom: 1px dotted @border-color-normal;
+  margin-bottom: 10px;
+
+  :global {
+    .ant-row.ant-form-item {
+      width: auto;
+    }
+    .ant-form-item-label, .ant-form-item-control-wrapper {
+      width: auto;
+      display: inline-block;
+      float: left;
+    }
+  }
+}
+
+.searchContainer {
+  display: flex;
+  position: relative;
+}
+
+.searchActionCol {
+  position: absolute;
+  :global {
+    .ant-form-item-control-wrapper {
+      margin-right: 0!important;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+@import "../global_styles/_variables";
+
+:global {
+
+  template {
+    display: none;
+  }
+
+  .ant-hide,
+  [ant\:cloak],
+  [ant-cloak],
+  [data-ant-cloak],
+  [hidden],
+  [x-ant-cloak],
+  .ant-cloak,
+  .x-ant-cloak,
+  .ant-hide:not(.ant-hide-animate) {
+    display: none !important;
+  }
+  .ant-v-hide {
+    // visibility: hidden;
+    opacity: 0;
+  }
+}

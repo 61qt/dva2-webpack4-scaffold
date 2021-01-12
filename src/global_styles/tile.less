@@ -1,0 +1,403 @@
+/**
+ * Tiles
+ * 瓦片样式
+ */
+
+@import "../global_styles/_variables";
+
+@tile-palette: blue, cyan, green, yellow, orange, red, pink, amethyst, black, gray, white;
+
+:global {
+  .tile {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background-color: @gray;
+    text-decoration: none;
+    color: #fff;
+    box-shadow:
+      1PX 1PX 1PX 0 rgba(0,0,0,.07),
+      1PX 2PX 5PX 0 rgba(0,0,0,.06);
+
+    &:hover {
+      box-shadow:
+        0 5PX 11PX 0 rgba(0,0,0,.18),
+        0 4PX 15PX 0 rgba(0,0,0,.15);
+    }
+
+    &:focus,
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    > .tile-header {
+      position: relative;
+      padding: 15PX;
+      padding-bottom: 0;
+    }
+
+    > .tile-header > h1,
+    > .tile-header > h2,
+    > .tile-header > h3,
+    > .tile-header > h4,
+    > .tile-header > h5,
+    > .tile-header > h6 {
+      margin: 0;
+    }
+
+    > .tile-header > .tile-widgets {
+      position: absolute;
+      right: 8PX;
+      top: 6PX;
+      z-index: 99;
+      display: inline-block;
+
+      a {
+        color: #Fff;
+        cursor: pointer;
+      }
+
+      .divider {
+        margin: 0 4PX;
+      }
+    }
+
+    > .tile-body {
+      position: relative;
+      padding: 15PX;
+      padding-top: 15PX;
+    }
+  }
+
+  .tile.tile-bar {
+    display: block;
+    border-top: 2PX solid;
+    cursor: default;
+
+    .title {
+      display: block;
+      padding: 15PX;
+      width: 100%;
+
+      > h3 {
+        display: block;
+        font-size: 15PX;
+      }
+
+      > p {
+        display: block;
+        margin-bottom: 0;
+        min-height: 34PX;
+        font-size: 12PX;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      right: 20PX;
+      bottom: 5PX;
+      z-index: 1;
+      color: rgba(0, 0, 0, .1);
+
+      i {
+        margin: 0;
+        padding: 0;
+        font-size: 100PX;
+        line-height: 0;
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  a.tile.tile-bar {
+    cursor: pointer;
+  }
+
+  /**
+   * State
+   * 状态样式
+   */
+
+  .tile.tile-state {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding: 20PX;
+    background-color: @gray;
+    color: #fff;
+
+    &:hover {
+      background-color: darken(@gray, 4%);
+    }
+
+    .num,
+    h3,
+    h5,
+    p {
+      position: relative;
+      // z-index: 5;
+      margin: 0 0 8PX 0;
+      padding: 0;
+      color: inherit;
+    }
+
+    p {
+      font-size: 12PX;
+    }
+
+    .num {
+      font-size: 38PX;
+      font-weight: lighter;
+    }
+
+    .icon {
+      position: absolute;
+      right: 5PX;
+      bottom: 5PX;
+      z-index: 1;
+      color: rgba(0, 0, 0, .1);
+
+      i {
+        margin: 0;
+        padding: 0;
+        font-size: 100PX;
+        line-height: 0;
+        vertical-align: bottom;
+      }
+    }
+
+  }
+
+
+  /**
+   * Progress Style
+   * 进程瓦片
+   */
+
+  .tile.tile-progress {
+    background-color: @gray;
+    color: #fff;
+
+    .tile-header {
+      padding: 15PX 20PX;
+      padding-bottom: 40PX;
+
+      h3,
+      a,
+      span,
+      i {
+        color: inherit;
+      }
+
+      span {
+        margin-top: 4PX;
+        color: rgba(255, 255, 255, .7);
+        font-size: 11PX;
+      }
+
+      h3,
+      span {
+        display: block;
+      }
+    }
+
+    .tile-progressbar {
+      margin: 0;
+      height: 2PX;
+      background: rgba(0,0,0,.18);
+
+      span {
+        display: block;
+        width: 0;
+        height: 100%;
+        background-color: #fff;
+      }
+    }
+
+    .tile-footer {
+      padding: 20PX;
+      background: rgba(0,0,0,.1);
+      border-radius: 0 0 3PX 3PX;
+      text-align: right;
+
+      h4,
+      > span {
+        color: #fff;
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 14PX;
+      }
+
+      > span {
+        margin-top: 4PX;
+        color: rgba(255,255,255,.7);
+        font-size: 11PX;
+      }
+    }
+  }
+
+
+  /**
+   * Title Styles
+   * 标题瓦片
+   */
+
+  .tile.tile-title {
+    position: relative;
+    display: block;
+    background-color: @gray;
+
+    &:hover {
+      background-color: darken(@gray, 4%);
+    }
+
+    .icon {
+      padding: 20PX;
+      text-align: center;
+
+      i {
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        line-height: 1;
+        font-size: 60PX;
+      }
+    }
+
+    .title {
+      text-align: center;
+      background-color: darken(@gray, 4%);
+      cursor: default;
+
+      h3,
+      p,
+      > div, {
+        margin: 0;
+        padding: 0 20PX;
+        color: inherit;
+      }
+
+      h3 {
+        margin-bottom: 10PX;
+        padding-top: 20PX;
+        font-size: 16PX;
+        font-weight: bold;
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding-bottom: 20PX;
+        height: 60PX;
+        font-size: 11PX;
+        color: rgba(255,255,255,.85);
+      }
+    }
+  }
+
+  /**
+   * Block Styles
+   * 块状瓦片
+   */
+
+  .tile.tile-block {
+    margin-bottom: 20PX;
+    background-color: @gray;
+    color: #fff;
+
+    .tile-header {
+      padding: 20PX;
+      color: #fff;
+      font-size: 17PX;
+
+      a,
+      span,
+      > i {
+        color: #fff;
+      }
+
+      span {
+        margin-top: 4PX;
+        display: block;
+        color: #fff;
+        font-size: 11PX;
+      }
+
+      > i {
+        float: right;
+        font-size: 28PX;
+        position: relative;
+        top: 4PX;
+      }
+    }
+
+    .tile-content {
+      padding: 20PX;
+      background-color: rgba(0,0,0,.03);
+    }
+
+    .tile-footer {
+      padding: 20PX;
+      border-top: 1PX solid rgba(255,255,255,.1);
+      background-color: rgba(0,0,0,.03);
+      color: #fff;
+      border-radius: 0 0 5PX 5PX;
+
+      a {
+        color: #fff;
+      }
+
+      .btn {
+        background-color: rgba(0,0,0,.1) !important;
+        border-bottom-width: 0;
+        color: #fff;
+      }
+    }
+  }
+
+  /**
+   * Palettes
+   * 其他调色板
+   */
+
+  // mixin to iterate over colors and create CSS class for each one
+  .make-color-classes(@i: length(@tile-palette)) when (@i > 0) {
+    .make-color-classes(@i - 1);
+    @color: extract(@tile-palette, @i);
+
+    .tile.tile-@{color},
+    .tile.tile-state.tile-@{color},
+    .tile.tile-progress.tile-@{color},
+    .tile.tile-title.tile-@{color}, {
+      background-color: @@color;
+
+      .tile-header,
+      .tile-content,
+      .tile-footer,
+      .tile-widgets a,
+      .title p {
+      }
+    }
+
+    .tile.tile-state.tile-@{color}:hover,
+    .tile.tile-title.tile-@{color}:hover,
+    .tile.tile-title.tile-@{color} .title {
+      background-color: darken(@@color, 4%);
+    }
+
+    .tile.tile-bar.tile-@{color} {
+      border-top-color: darken(@@color, 4%);
+    }
+  }
+
+  .make-color-classes();
+
+}

@@ -1,0 +1,16 @@
+@import "../global_styles/_variables";
+
+:global {
+  .ant-btn-primary {
+    background: @cyan;
+    border-color: @cyan;
+    &.ant-btn-background-ghost {
+      color: @cyan;
+      background-color: transparent;
+      border-color: @cyan;
+    }
+  }
+  .ant-btn.ant-btn-primary.christmas:before {
+    display: none!important;
+  }
+}

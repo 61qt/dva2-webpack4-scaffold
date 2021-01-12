@@ -1,0 +1,101 @@
+// @import "../../global_styles/_variables";
+
+.normal {
+  display: block;
+}
+
+:global {
+  .detail-view {
+    thead {
+      th.detail-view-cell {
+        border-bottom: 0!important;
+      }
+    }
+    .detail-view-holder-tr {
+      width: 100%;
+      td.detail-view-cell:empty {
+        border: 0;
+        padding: 0;
+        margin: 0;
+        height: 0;
+      }
+      &, td.detail-view-cell {
+        border: 0!important;
+        padding: 0!important;
+        margin: 0!important;
+        font-size: 0;
+        line-height: 0;
+        opacity: 0;
+      }
+    }
+    &.small {
+      td.detail-view-cell, th.detail-view-cell {
+        padding: 4px 12px;
+      }
+      table.detail-view-table {
+        td.detail-view-label {
+          color: inherit;
+        }
+        td.detail-view-content {
+          color: inherit;
+        }
+      }
+    }
+    > table.detail-view-table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      empty-cells: show;
+      width: 100%;
+      margin: 8px 0 16px;
+      word-wrap: break-word;
+      white-space: normal;
+      word-break: break-all;
+      th.detail-view-cell {
+        // white-space: nowrap;
+        color: #5c6b77;
+        font-weight: 600;
+        background: #f7f7f7;
+
+      }
+      td.detail-view-label {
+        color: #999999;
+      }
+      td.detail-view-content {
+        color: #333333;
+      }
+      border: 1px solid #e9e9e9;
+      &.table-no-border {
+        &, td.detail-view-cell, th.detail-view-cell {
+          border: 0;
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+      td.detail-view-cell, th.detail-view-cell {
+        border: 1px solid #e9e9e9;
+        padding: 8px 16px;
+        text-align: left;
+        .ant-form-item {
+          margin-bottom: 0!important;
+        }
+        vertical-align: top;
+      }
+      td.detail-view-cell:first-child {
+        border-left: 0;
+        width: 10em;
+      }
+      // 不计算label的宽度
+      &.table-no-calculate-label-witdh {
+        td.detail-view-cell:first-child {
+          width: auto;
+        }
+      }
+      td.detail-view-cell:last-child {
+        border-left: 0;
+      }
+      td.detail-view-cell.detail-view-empty {
+        background: #f7f7f7;
+      }
+    }
+  }
+}

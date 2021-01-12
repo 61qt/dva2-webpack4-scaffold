@@ -1,0 +1,162 @@
+@import "../../global_styles/_variables";
+
+:global{
+  .ant-layout-header {
+    height: 52px;
+  }
+}
+
+.normal {
+  flex-direction: row;
+  padding-left: 0;
+  padding-right: 0;
+  display: flex;
+  float: left;
+  background-color: #3398dc;
+  color: @white;
+  font-size: 14px;
+}
+
+.headerRight {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: right;
+}
+
+.menu {
+  width: 100%;
+  background-color: transparent!important;
+  border: 0;
+  margin: 0;
+  text-align: right;
+  color: @white;
+}
+li.menuItem {
+  position: relative;
+  max-width: 50%;
+  display: inline-block!important;
+  float: none!important;
+  border-bottom: 0!important;
+  margin: 0;
+  border-right: 0px solid @white!important;
+  padding-right: 16px!important;
+  padding-left: 16px!important;
+  &::after {
+    position: absolute;
+    content: " ";
+    display: block;
+    background: #BFD8F4;
+    width: 1px;
+    height: 24px;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 0px;
+  }
+
+
+
+  height: 36px;
+  line-height: 36px;
+  position: relative;
+  top: -1px!important;
+  .anticon {
+    margin-left: 4px;
+  }
+  &, &:hover {
+    border-bottom: 0!important;
+    border-color: transparent;
+  }
+}
+li.menuItemNorderBorder {
+  &, &:hover, &:active, &.active {
+    border-right: 0!important;
+
+  }
+  &::after {
+    display: none;
+  }
+}
+
+.headerLogoContainer {
+  display: flex;
+  padding-left: 35px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100%;
+  margin-right: -1px;
+}
+
+.headerCenter {
+  display: block;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  align-items: center;
+  vertical-align: middle;
+  &, * {
+    vertical-align: middle;
+    line-height: 1;
+  }
+}
+
+.headerLogoHomeImgText {
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.headerAppName {
+  // padding-bottom: 10px;
+  vertical-align: unset;
+}
+
+.headerNotAppName {
+  display: inline-block;
+}
+
+.headerLogoImg {
+  display: inline-block;
+  width: 36px;
+  height: 26px;
+}
+
+.headerLogoImgText {
+  display: inline-block;
+  height: 18px;
+  padding-left: 6px;
+}
+
+.headerLogoText {
+  margin-left: 4px;
+  display: inline-block;
+  text-align: left;
+  color: @white;
+  line-height: 1;
+
+  div {
+    font-size: 16px;
+  }
+
+  span {
+    font-size: 12px;
+  }
+}
+
+.headerName {
+  display: inline-block;
+  padding-left: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #129fdd;
+  line-height: 100%;
+  padding-top: 2px;
+}
+
+.taskIcon {
+  width: 14px;
+  height: 18px;
+  vertical-align: middle;
+}

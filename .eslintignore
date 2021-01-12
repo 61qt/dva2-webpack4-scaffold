@@ -1,0 +1,10 @@
+src/**/*-test.js
+node_modules/**/*
+src/index.ejs
+src/npm_copy/**/*
+src/static/ali-react-table.js
+public/ali-react-table.js
+.webpackrc.js
+public/scratch-*
+vendor/*
+vender/*

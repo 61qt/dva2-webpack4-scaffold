@@ -1,0 +1,53 @@
+location = / {
+    rewrite ^(.*)$ $scheme://$http_host/example/ break;
+  }
+
+  location ^~ /static/ {
+    alias {{devRoot}}/src/static/;
+  }
+
+  {{#each modules}}
+    location = /{{ moduleWebPrefix }} {
+      rewrite ^(.*)$ $scheme://$http_host/{{ moduleWebPrefix }}/ break;
+    }
+
+    location ^~ /{{ moduleWebPrefix }}/ {
+      try_files $uri $uri/ @{{ moduleName }}StaticProxy;
+      add_header Last-Modified $date_gmt;
+    }
+
+    location @{{ moduleName }}StaticProxy {
+      proxy_pass http://localhost:{{modulePort}};
+
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+
+      proxy_intercept_errors on;
+      recursive_error_pages on;
+
+      error_page 404 = @{{ moduleName }}PageProxy;
+      add_header Last-Modified $date_gmt;
+    }
+
+    location @{{ moduleName }}PageProxy {
+      rewrite ^(.*)$ {{ moduleWebPrefixRewrite }} break;
+      proxy_pass http://localhost:{{modulePort}};
+
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+
+      proxy_intercept_errors on;
+      recursive_error_pages on;
+      add_header Last-Modified $date_gmt;
+    }
+  {{/each}}

@@ -1,0 +1,43 @@
+@import "../../global_styles/_variables";
+@import "../../global_styles/index";
+
+html, body, :global(#root) {
+  height: 100%;
+}
+
+html, body, :global(#root), :global(#app-root) {
+  height: 100%;
+  // max-width: 750px;
+  font-size: 16PX;
+  margin: 0 auto;
+}
+
+body {
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+@media (min-width: 768PX) {
+  body {
+    max-width: 750px;
+  }
+}
+
+:global {
+  // 如果头像的背景颜色去掉，有识别的话，就进行去掉。
+  span.ant-avatar-string {
+    text-shadow: 1px 1px 1px #000000;
+  }
+  .am-search-value:not([value=""]) ~ .am-search-clear{
+    display: block;
+  }
+  .am-button-primary {
+    &:hover {
+      color: #fff !important;
+    }
+    &:active {
+      color: #40a9ff !important;
+    }
+  }
+}
+

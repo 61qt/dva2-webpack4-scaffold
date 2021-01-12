@@ -1,0 +1,54 @@
+server {
+  listen 80;
+  {{#if portHttp}}
+  listen {{portHttp}};
+  {{/if}}
+  listen 443 ssl;
+  {{#if portHttps}}
+  listen {{portHttps}} ssl;
+  {{/if}}
+  server_name demo-dev.example.cn demo.example.cn;
+
+  ssl_certificate {{devRoot}}/nginx/ssl.crt;
+  ssl_certificate_key {{devRoot}}/nginx/ssl.key;
+  {{!-- {{{sslSource}}} --}}
+  include {{devRoot}}/nginx/nginx.union_ssl.conf.part;
+
+  {{!-- access_log {{devRoot}}/nginx/access.log; --}}
+  access_log off;
+  error_log {{devRoot}}/nginx/error.log;
+
+  index index.html;
+  root {{websiteRoot}};
+
+  {{!-- {{{devPathSource}}} --}}
+  include {{devRoot}}/nginx/nginx.union_dev_path.conf.part;
+}
+
+server {
+  listen 80;
+  {{#if portHttp}}
+  listen {{portHttp}};
+  {{/if}}
+  listen 443 ssl;
+  {{#if portHttps}}
+  listen {{portHttps}} ssl;
+  {{/if}}
+  {{!-- 生产模式的，真正要用的时候去掉 prod --}}
+  server_name prod-demo.example.cn;
+
+  {{!-- access_log {{devRoot}}/nginx/access.log; --}}
+  access_log off;
+  error_log {{devRoot}}/nginx/error.log;
+
+  index index.html;
+  root {{websiteRoot}};
+
+  ssl_certificate {{devRoot}}/nginx/ssl.crt;
+  ssl_certificate_key {{devRoot}}/nginx/ssl.key;
+  {{!-- {{{sslSource}}} --}}
+  include {{devRoot}}/nginx/nginx.union_ssl.conf.part;
+
+  {{!-- {{{prodPathSource}}} --}}
+  include {{devRoot}}/nginx/nginx.union_prod_path.conf.part;
+}

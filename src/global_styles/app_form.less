@@ -1,0 +1,32 @@
+@import "../global_styles/_variables";
+
+:global {
+  .app-edit-form {
+    max-width: 980PX;
+    .ant-input-number-row,
+    .ant-calendar-picker-row {
+      width: 100%;
+    }
+  }
+
+  .ant-form-explain {
+    position: relative;
+    z-index: 100;
+  }
+
+  .ant-form-item {
+    // margin-bottom: 12PX;
+    margin-bottom: @text-size-base;
+  }
+  .ant-form-extra {
+    line-height: 1.4em;
+    padding: 4PX 0;
+    font-size: @text-size-base * 0.85;
+  }
+  .app-edit-form-hide-label {
+    .ant-form-item-label {
+      visibility: visible;
+      opacity: 0;
+    }
+  }
+}

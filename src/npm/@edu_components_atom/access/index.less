@@ -1,0 +1,26 @@
+// @import "../../global_styles/_variables";
+
+.accessHidden {
+  display: none!important;
+  visibility: hidden!important;
+}
+
+.accessHiddenDev {
+  > * {
+    box-shadow: 2px 1px 1px #613207!important;
+    position: relative;
+    &:after {
+      content: '无权限(debug)'!important;
+      font-size: 12px!important;
+      line-height: 1em!important;
+      color: #613207!important;
+      position: absolute!important;
+      bottom: 0!important;
+      right: 0!important;
+      transform: scale(0.7)!important;
+      overflow: hidden;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}

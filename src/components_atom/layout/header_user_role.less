@@ -1,0 +1,35 @@
+@import "../../global_styles/_variables";
+
+.normal {
+  display: inline-block;
+}
+
+
+.headerDownIcon {
+  :global {
+    i.anticon {
+      font-size: 14px!important;
+      margin: 0;
+      transform: none;
+      padding-left: 4px;
+      position: relative;
+      top: 2px;
+    }
+  }
+}
+
+.accountDownMenu {
+  border-radius: 0;
+  border: 1px solid #f4f4f4;
+  position: relative;
+  top: 3px;
+  :global {
+    .ant-dropdown-menu-item {
+      border-radius: 0;
+      padding: 4px 20px 4px;
+      .anticon {
+        margin-right: 16px;
+      }
+    }
+  }
+}

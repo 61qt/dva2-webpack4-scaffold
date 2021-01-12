@@ -1,0 +1,14 @@
+@import "../global_styles/_variables";
+
+:global {
+  .popconfirm-hide-cancel {
+    .ant-popover-buttons {
+      .ant-btn {
+        visibility: hidden;
+        &.ant-btn-primary {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

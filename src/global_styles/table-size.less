@@ -1,0 +1,137 @@
+:global {
+  div.ant-table-middle {
+    > .ant-table-title,
+    > .ant-table-content > .ant-table-footer {
+    }
+    > .ant-table-content {
+      > .ant-table-header > table,
+      > .ant-table-body > table,
+      > .ant-table-scroll > .ant-table-header > table,
+      > .ant-table-scroll > .ant-table-body > table,
+      > .ant-table-fixed-left > .ant-table-header > table,
+      > .ant-table-fixed-right > .ant-table-header > table,
+      > .ant-table-fixed-left
+        > .ant-table-body-outer
+        > .ant-table-body-inner
+        > table,
+      > .ant-table-fixed-right
+        > .ant-table-body-outer
+        > .ant-table-body-inner
+        > table {
+        > .ant-table-thead > tr > th,
+        > .ant-table-tbody > tr > td {
+          // padding: 4PX;
+          padding: 8PX 16PX;
+        }
+      }
+    }
+
+    tr.ant-table-expanded-row td > .ant-table-wrapper {
+    }
+  }
+
+  div.ant-table-small {
+    > .ant-table-title,
+    > .ant-table-content > .ant-table-footer {
+    }
+
+    > .ant-table-title {
+    }
+
+    > .ant-table-content > .ant-table-footer {
+      &::before {
+      }
+    }
+
+    > .ant-table-content {
+      > .ant-table-body {
+      }
+
+      > .ant-table-header > table,
+      > .ant-table-body > table,
+      > .ant-table-scroll > .ant-table-header > table,
+      > .ant-table-scroll > .ant-table-body > table,
+      > .ant-table-fixed-left > .ant-table-header > table,
+      > .ant-table-fixed-right > .ant-table-header > table,
+      > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table,
+      > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table {
+        > .ant-table-thead > tr > th,
+        > .ant-table-tbody > tr > td {
+          // padding: 4PX;
+          padding: 8PX 16PX;
+        }
+        > .ant-table-thead > tr > th {
+          // padding: 4PX;
+          padding: 12PX 16PX;
+          background-color: @title-bg;
+        }
+        > .ant-table-thead > tr {
+        }
+        > .ant-table-thead > tr > th.ant-table-column-sort {
+          // padding: 4PX;
+          padding: 12PX 16PX;
+        }
+      }
+
+      > .ant-table-scroll > .ant-table-header > table,
+      > .ant-table-scroll > .ant-table-body > table,
+      > .ant-table-fixed-left > .ant-table-header > table,
+      > .ant-table-fixed-right > .ant-table-header > table,
+      > .ant-table-fixed-left
+        > .ant-table-body-outer
+        > .ant-table-body-inner
+        > table,
+      > .ant-table-fixed-right
+        > .ant-table-body-outer
+        > .ant-table-body-inner
+        > table {
+      }
+
+      .ant-table-header {
+      }
+
+      .ant-table-placeholder,
+      .ant-table-row:last-child td {
+      }
+    }
+
+    &.ant-table-bordered {
+      .ant-table-title {
+      }
+
+      .ant-table-content {
+      }
+
+      .ant-table-footer {
+        &::before {
+        }
+      }
+
+      .ant-table-placeholder {
+      }
+
+      .ant-table-thead > tr > th.ant-table-row-cell-last,
+      .ant-table-tbody > tr > td:last-child {
+      }
+
+      .ant-table-fixed-left {
+        .ant-table-thead > tr > th:last-child,
+        .ant-table-tbody > tr > td:last-child {
+        }
+      }
+
+      .ant-table-fixed-right {
+      }
+    }
+
+    tr.ant-table-expanded-row td > .ant-table-wrapper {
+    }
+
+    // https://github.com/ant-design/ant-design/issues/19287#issuecomment-544368967
+    &.ant-table-fixed-header
+      > .ant-table-content
+      > .ant-table-scroll
+      > .ant-table-body {
+    }
+  }
+}

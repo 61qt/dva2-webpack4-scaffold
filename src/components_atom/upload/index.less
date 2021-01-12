@@ -1,0 +1,58 @@
+@import "../../global_styles/_variables";
+
+.normal {
+  :global {
+    .ant-modal-close {
+      display: none;
+    }
+  }
+}
+.uploadTipContent {
+  // text-align: center;
+  padding-top: 2em;
+  padding-bottom: 5em;
+}
+
+.uploadCancelAction {
+  text-align: right;
+}
+
+.uploadErrorContent {
+  max-height: 10em;
+  width: 100%;
+  overflow: auto;
+}
+
+.asyncUploadTips {
+  width: 220px;
+  height: 90px;
+  position: fixed;
+  top: 58px;
+  padding: 15px;
+  line-height: 20px;
+  color: #999;
+  background: #ffffff;
+  white-space: normal;
+  box-shadow: 1px 5px 10px #e2e2e2;
+  border-radius: 4px;
+  z-index: 9999;
+  .closeButton {
+    text-align: center;
+    width: 46px;
+    line-height: 22px;
+    background: #1785ff;
+    color: #ffffff;
+    border-radius: 4px;
+    margin-left: auto;
+  }
+  .triangle {
+    width:0;
+    height:0;
+    border-right:6px solid transparent;
+    border-left:6px solid transparent;
+    border-bottom:6px solid #ffffff;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+  }
+}

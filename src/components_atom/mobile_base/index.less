@@ -1,0 +1,39 @@
+@import "../../global_styles/_variables";
+
+// .baseWrap {
+//   position: fixed;
+//   transform: translateZ(0);
+//   height: 100%;
+//   width: 100%;
+//   top: 0;
+//   left: 0;
+// }
+.nav {
+  position: fixed;
+  transform: translateZ(0);
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 89;
+  :global {
+    .am-navbar{
+      height: 88px;
+      line-height: 88px;
+      font-size: 34px;
+    }
+  }
+}
+.contentWrap {
+  padding-top: 88px;
+  height: 100%;
+  z-index: 9999;
+  overflow-y: auto;
+}
+.contentWraphiddenTitle {
+  height: 100%;
+  z-index: 9999;
+  overflow-y: auto;
+}
+.home {
+  font-size: 48px;
+}

@@ -1,0 +1,36 @@
+@import "../global_styles/_variables";
+
+:global {
+  .text-delete {
+    text-decoration: line-through;
+    color: @text-color-mute!important;
+    &, * {
+      opacity: 0.5;
+    }
+    img {
+      filter: grayscale(100%);
+      filter: gray;
+    }
+  }
+  .text-white {
+    color: @white!important;
+  }
+  .text-red {
+    color: @red!important;
+  }
+  .text-primary {
+    color: @primary!important;
+  }
+  .text-green {
+    color: @green!important;
+  }
+  .text-black {
+    color: @black!important;
+  }
+  .text-gray {
+    color: @gray!important;
+  }
+  .text-yellow {
+    color: @yellow !important;
+  }
+}
