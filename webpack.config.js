@@ -106,29 +106,6 @@ if ('makerspace' === buildModule) {
   }]));
 }
 
-const styleRuleUse = [
-  isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-  'thread-loader',
-  {
-    loader: 'css-loader',
-    options: {
-      importLoaders: 1,
-      modules: true,
-      localIdentName: '[name]_[local]-[hash:base64:5]',
-    },
-  },
-  'postcss-loader',
-  {
-    loader: 'less-loader',
-    options: {
-      lessOptions: {
-        javascriptEnabled: true,
-        modifyVars: theme,
-      },
-    },
-  },
-];
-
 const moduleRules = [
   {
     test: /\.svg$/,
@@ -193,8 +170,68 @@ const moduleRules = [
     ],
   },
   {
-    test: /\.(css|less)$/,
-    use: styleRuleUse,
+    test: /\.css$/,
+    use: [
+      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+      'thread-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+        },
+      },
+      'postcss-loader',
+    ],
+  },
+  {
+    test: /\.less$/,
+    use: [
+      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+      'thread-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]_[local]-[hash:base64:5]',
+        },
+      },
+      'postcss-loader',
+      {
+        loader: 'less-loader',
+        options: {
+          lessOptions: {
+            javascriptEnabled: true,
+            modifyVars: theme,
+          },
+        },
+      },
+    ],
+    exclude: /node_modules/,
+  },
+  {
+    test: /\.less$/,
+    use: [
+      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+      'thread-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+        },
+      },
+      'postcss-loader',
+      {
+        loader: 'less-loader',
+        options: {
+          lessOptions: {
+            javascriptEnabled: true,
+            modifyVars: theme,
+          },
+        },
+      },
+    ],
+    exclude: /src/,
   },
   // {
   //   test: /\.html$/,
